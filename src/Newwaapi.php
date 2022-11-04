@@ -4,9 +4,9 @@ namespace Yama\NewwaapiPhpLib;
 
 class Newwaapi
 {
-    var string $url;
+    var $url;
 
-    function __construct(string $url)
+    function __construct($url)
     {
         $this->url = $url;
     }
@@ -33,22 +33,22 @@ class Newwaapi
         return $response;
     }
 
-    public function info(): string
+    public function info()
     {
         return $this->curl('GET', 'info');
     }
 
-    public function sendMessage(string $number, string $message): string
+    public function sendMessage($number, $message)
     {
         return $this->curl('POST', 'send-message', ['number' => $number, 'message' => $message]);
     }
 
-    public function sendGroupMessage(string $groupId, string $message): string
+    public function sendGroupMessage($groupId, $message)
     {
         return $this->curl('POST', 'send-group-message', ['id' => $groupId, 'message' => $message]);
     }
 
-    public function sendMedia(string $numberOrGroupId, string $file, string $caption, string $name): string
+    public function sendMedia($numberOrGroupId, $file, $caption, $name)
     {
         return $this->curl('POST', 'send-media', ['number' => $numberOrGroupId, 'file' => $file, 'caption' => $caption, 'name' => $name]);
     }
