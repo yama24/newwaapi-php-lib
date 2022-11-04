@@ -42,14 +42,25 @@ class Newwaapi
     {
         return $this->curl('POST', 'send-message', ['number' => $number, 'message' => $message]);
     }
-
+    
     public function sendGroupMessage($groupId, $message)
     {
         return $this->curl('POST', 'send-group-message', ['id' => $groupId, 'message' => $message]);
     }
-
+    
     public function sendMedia($numberOrGroupId, $file, $caption, $name)
     {
         return $this->curl('POST', 'send-media', ['number' => $numberOrGroupId, 'file' => $file, 'caption' => $caption, 'name' => $name]);
     }
+    
+    public function isRegistered($number)
+    {
+        return $this->curl('POST', 'is-registered', ['number' => $number]);
+    }
+
+    public function getGroups()
+    {
+        return $this->curl('GET', 'get-groups');
+    }
+
 }

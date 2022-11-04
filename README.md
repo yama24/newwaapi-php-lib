@@ -1,6 +1,7 @@
 # Newwaapi PHP Lib
 
 This is PHP library for [newwaapi](https://github.com/yama24/newwaapi)
+This version of library related to [newwaapi v1.1.0](https://github.com/yama24/newwaapi/releases/tag/1.1.0)
 
 
 ## Installation
@@ -60,6 +61,22 @@ echo $wa->sendMedia('6281292267204', 'example media caption', "https://upload.wi
 | `file` | `string` | **Required**. (you can fill it with base64 url data / url) |
 | `caption` | `string` | example media caption (you can fill with empty string) |
 | `name` | `string` | example document file name (work for document file, you can fill with empty string) |
+
+for check the number is registered on WhatsApp or not 
+
+```php
+echo $wa->isRegistered('6281292267204');
+ ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `number` | `string` | **Required**. 6281292267204 |
+
+
+for get the list of groups 
+
+```php
+echo $wa->getGroups();
+ ```
 
 
 ## Please check this out
