@@ -2,7 +2,7 @@
 
 This is PHP library for [newwaapi](https://github.com/yama24/newwaapi)
 
-This version of library related to [newwaapi v1.1.0](https://github.com/yama24/newwaapi/releases/tag/1.1.0)
+This version of library related to [newwaapi latest release](https://github.com/yama24/newwaapi/releases)
 
 
 ## Installation
@@ -77,6 +77,12 @@ for get the list of groups
 
 ```php
 echo $wa->getGroups();
+ ```
+
+for get the list of config
+
+```php
+echo $wa->getConfig();
  ```
 
 
