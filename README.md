@@ -2,7 +2,7 @@
 
 This is PHP library for [newwaapi](https://github.com/yama24/newwaapi)
 
-This version of library related to [newwaapi latest release](https://github.com/yama24/newwaapi/releases)
+This version of library related to [newwaapi latest release](https://github.com/yama24/newwaapi/releases/latest)
 
 
 ## Installation
