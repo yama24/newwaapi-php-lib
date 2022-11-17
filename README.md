@@ -54,7 +54,7 @@ echo $wa->sendGroupMessage('628986182128-1627374981@g.us', 'example group messag
 for send media to contact or group
 
 ```php
-echo $wa->sendMedia('6281292267204', 'example media caption', "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png");
+echo $wa->sendMedia('6281292267204', 'example media caption', "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png", '');
  ```
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
