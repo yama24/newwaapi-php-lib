@@ -5,10 +5,12 @@ namespace Yama\NewwaapiPhpLib;
 class Newwaapi
 {
     var $url;
+    var $timeout;
 
-    function __construct($url)
+    function __construct($url, $timeout = 0)
     {
         $this->url = $url;
+        $this->timeout = $timeout;
     }
 
     private function curl($requset, $path, $array = null)
@@ -20,7 +22,7 @@ class Newwaapi
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
+            CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => $requset,
