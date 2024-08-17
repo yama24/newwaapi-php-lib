@@ -50,9 +50,9 @@ class Newwaapi
         return $this->curl('POST', 'send-group-message', ['id' => $groupId, 'message' => $message]);
     }
 
-    public function sendMedia($numberOrGroupId, $file, $caption, $name)
+    public function sendMedia($number, $file, $caption = '', $name = '')
     {
-        return $this->curl('POST', 'send-media', ['number' => $numberOrGroupId, 'file' => $file, 'caption' => $caption, 'name' => $name]);
+        return $this->curl('POST', 'send-media', ['number' => $number, 'file' => $file, 'caption' => $caption, 'name' => $name]);
     }
 
     public function isRegistered($number)
