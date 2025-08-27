@@ -57,7 +57,8 @@ class Newwaapi
 
     public function isRegistered($number)
     {
-        return $this->curl('POST', 'is-registered', ['number' => $number]);
+        // return $this->curl('POST', 'is-registered', ['number' => $number]);
+        return $this->curl('GET', 'is-registered?number=' . $number);
     }
 
     public function getGroups()
