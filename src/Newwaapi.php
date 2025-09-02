@@ -6,11 +6,14 @@ class Newwaapi
 {
     var $url;
     var $timeout;
+    var $authorization;
 
-    function __construct($url, $timeout = 0)
+    function __construct($url, $user = null, $password = null, $timeout = 0)
     {
         $this->url = $url;
         $this->timeout = $timeout;
+
+        $this->authorization = 'Basic ' . base64_encode($user . ':' . $password);
     }
 
     private function curl($requset, $path, $array = null)
@@ -27,6 +30,9 @@ class Newwaapi
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => $requset,
             CURLOPT_POSTFIELDS => $array,
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: ' . $this->authorization,
+            ),
         ));
 
         $response = curl_exec($curl);
